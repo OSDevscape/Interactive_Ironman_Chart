@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ladlor’s Chart — Iron Edition</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="frame">
+    <header>
+      <div class="helmet-logo" aria-hidden="true">
+        <img class="helmet-dark" src="./assets/ironman-helm.png" alt="">
+        <img class="helmet-light" src="./assets/hardcore-ironman-helm.png" alt="">
+      </div>
+      <div class="header-title">
+        <p class="eyebrow">IRONMAN PROGRESSION</p>
+        <h1>LADLOR’S CHART</h1>
+        <small>Community curated. Individually earned.</small>
+      </div>
+      <details class="settings">
+        <summary aria-label="Chart settings" aria-controls="chartSettingsPanel">⚙️</summary>
+        <div class="gear-panel" id="chartSettingsPanel">
+          <div class="options">
+            <label><input id="retirement" type="checkbox"> Enable retirement home items</label>
+            <label><input id="levels" type="checkbox"> Hide levels</label>
+            <label><input id="slayer" type="checkbox"> Hide slayer rewards</label>
+            <label class="theme">Theme
+              <select id="theme">
+                <option value="dark">Dark — silver &amp; black</option>
+                <option value="light">Light — parchment &amp; oxblood</option>
+              </select>
+            </label>
+            <label><input id="names" type="checkbox"> Show item names</label>
+          </div>
+          <p class="settings-note">Hide levels removes skill-level milestones. Hidden items keep their saved completion.</p>
+        </div>
+      </details>
+    </header>
+    <section class="top"><span id="count">Loading…</span><span id="percent">—</span></section>
+    <progress id="progress" max="1" value="0" aria-label="Overall completion"></progress>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Find a milestone…" aria-label="Search milestones">
+      <select id="filter" aria-label="Filter progress">
+        <option value="all">All items</option>
+        <option value="todo">Incomplete</option>
+        <option value="done">Completed</option>
+      </select>
+      <button id="next" type="button">Next ↓</button>
+    </div>
+    <p id="message" role="status"></p>
+    <div id="chart" aria-label="Progression chart"></div>
+    <footer>
+      <button id="reset" type="button">Reset progress</button>
+      <details>
+        <summary>Credits &amp; help</summary>
+        <p class="redesign-credit">Redesign by <strong>OSDevscape</strong>.</p>
+        <p>Chart by Ladlor, curated with the Ironscape community. Data: <a href="https://github.com/Madssb/InteractiveGearProg">Madssb/InteractiveGearProg</a>. Repository copyright © 2025 Mads S. Balto, MIT license. Artwork: <a href="https://oldschool.runescape.wiki/">OSRS Wiki</a>, <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>, separately licensed. Not affiliated with Jagex.</p>
+        <p>Tap an item for details and completion. Internet required. Progress and preferences save in this browser. No original-site save import, cloud sync, chart builder, or alternate charts.</p>
+      </details>
+    </footer>
+  </main>
+  <dialog id="detail" aria-labelledby="title">
+    <form method="dialog" class="item-close-form">
+      <button type="submit" class="item-close-button" aria-label="Close item details">&times;</button>
+    </form>
+    <div id="art"></div>
+    <h2 id="title"></h2>
+    <p id="state"></p>
+    <button id="toggle" type="button" class="primary"></button>
+    <a id="wiki" target="_blank" rel="noopener noreferrer">OSRS Wiki ↗</a>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>

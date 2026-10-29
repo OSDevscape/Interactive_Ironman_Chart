@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">OSDevscape Ironman Chart</string>
+    <string name="title_activity_main">OSDevscape Ironman Chart</string>
+    <string name="package_name">com.osdevscape.ironmanchart</string>
+    <string name="custom_url_scheme">com.osdevscape.ironmanchart</string>
+</resources>
